@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import { DrawyThing } from "./DrawyThing";
 import Time from "./Time";
 
@@ -19,7 +19,7 @@ function App() {
           onChange={(v) => setNumber(parseInt(v.target.value))}
         />
       </div>
-        <Time />
+      <Time />
     </div>
   );
 }
