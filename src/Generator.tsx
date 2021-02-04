@@ -1,24 +1,23 @@
 import React, {useState} from "react";
 import {CistercianNumber} from "./CistercianNumber";
+import { GeneratorContainer, GeneratorDisplay, GeneratorInput } from "./styles"
 
 function Generator() {
   const [number, setNumber] = useState(1);
 
   return (
-    <div className="App">
-      <div className="display">
-        <CistercianNumber value={number} />
-      </div>
-      <div className="number">
-        <input
+    <GeneratorContainer>
+        <GeneratorDisplay>
+            <CistercianNumber value={number} />
+        </GeneratorDisplay>
+        <GeneratorInput
           type="number"
           min={1}
           max={9999}
           value={isNaN(number) ? "" : number}
           onChange={(v) => setNumber(parseInt(v.target.value))}
         />
-      </div>
-    </div>
+    </GeneratorContainer>
   );
 }
 

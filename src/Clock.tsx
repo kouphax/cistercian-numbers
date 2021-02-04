@@ -1,55 +1,57 @@
-import React, {useEffect, useState} from "react";
-import {CistercianNumber} from "./CistercianNumber";
+import React, { useEffect, useState } from "react";
+import { CistercianNumber } from "./CistercianNumber";
+import { TimeContainer, TimeDisplay, TimeDisplayStatic } from "./styles";
+
+const currentDate = () => {
+  const date = new Date();
+  return {
+    seconds: date.getSeconds(),
+    minutes: date.getMinutes(),
+    hours: date.getHours(),
+    day: date.getDay(),
+    month: date.getMonth() + 1,
+    year: date.getFullYear(),
+  };
+};
 
 function Clock() {
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [day, setDay] = useState(0);
-    const [month, setMonth] = useState(0);
-    const [year, setYear] = useState(0);
-
+  const [date, setDate] = useState(currentDate());
   useEffect(() => {
     const interval = setInterval(() => {
-      const date = new Date();
-      setSeconds(date.getSeconds());
-      setMinutes(date.getMinutes());
-      setHours(date.getHours());
-      setDay(date.getDay())
-        setMonth(date.getMonth() + 1)
-        setYear(date.getFullYear())
+      setDate(currentDate());
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  return (<>
-    <div className="Time">
-      <div className="display">
-        <CistercianNumber value={day} />
-      </div>
-      <div className="display static"> - </div>
-      <div className="display">
-        <CistercianNumber value={month} />
-      </div>
-      <div className="display static"> - </div>
-      <div className="display">
-        <CistercianNumber value={year} />
-      </div>
-    </div>
-    <div className="Time">
-        <div className="display">
-            <CistercianNumber value={hours} />
-        </div>{" "}
-        <div className="display static"> : </div>
-        <div className="display">
-            <CistercianNumber value={minutes} />
-        </div>
-        <div className="display static"> : </div>
-        <div className="display">
-            <CistercianNumber value={seconds} />
-        </div>
-    </div>
-      </>
+  return (
+    <>
+      <TimeContainer>
+        <TimeDisplay>
+          <CistercianNumber value={date.day} />
+        </TimeDisplay>
+        <TimeDisplayStatic> / </TimeDisplayStatic>
+        <TimeDisplay>
+          <CistercianNumber value={date.month} />
+        </TimeDisplay>
+        <TimeDisplayStatic> / </TimeDisplayStatic>
+        <TimeDisplay>
+          <CistercianNumber value={date.year} />
+        </TimeDisplay>
+      </TimeContainer>
+      <TimeContainer>
+        <TimeDisplay>
+          <CistercianNumber value={date.hours} />
+        </TimeDisplay>
+        <TimeDisplayStatic> : </TimeDisplayStatic>
+        <TimeDisplay>
+          <CistercianNumber value={date.minutes} />
+        </TimeDisplay>
+        <TimeDisplayStatic> : </TimeDisplayStatic>
+        <TimeDisplay>
+          <CistercianNumber value={date.seconds} />
+        </TimeDisplay>
+      </TimeContainer>
+    </>
   );
 }
 

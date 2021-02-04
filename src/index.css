@@ -7,50 +7,9 @@ body {
   margin: 2em;
 }
 
-.App {
-  margin: auto auto;
-  width: 300px;
-  height: 400px;
-}
-
-.App .display {
-  height: 300px;
-  width: 300px;
-  display: inline-block;
-}
-
-.Time {
-  width: 600px;
-  margin: 0 auto;
-}
-
-.Time .display {
-  height: 100px;
-  width: 100px;
-  display: inline-block;
-  text-align: center;
-  vertical-align: center;
-}
-
-.Time .display.static {
-  opacity: 0.5;
-  font-size: 200px;
-}
-
-.App {
-  margin: auto auto;
-}
-
-.App input {
-  margin: 2em 1.5em;
-  width: 80%;
-}
-
 li, .what {
   font-size: 200%;
 }
 
-input {
-  font-size: 200%;
-  padding: 1em;
-}
+
+
