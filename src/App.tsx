@@ -1,26 +1,31 @@
-import React, { useState } from "react";
-import { DrawyThing } from "./DrawyThing";
-import Time from "./Time";
+import React from "react";
+import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import Generator from "./Generator";
+import Clock from "./Clock";
 
 function App() {
-  const [number, setNumber] = useState(1);
-
   return (
-    <div className="App">
-      <div className="display">
-        <DrawyThing data={number} />
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Number</Link>
+          </li>
+          <li>
+            <Link to="/clock">Clock</Link>
+          </li>
+        </ul>
+        <hr />
+        <Switch>
+          <Route exact path="/">
+            <Generator />
+          </Route>
+          <Route path="/clock">
+            <Clock />
+          </Route>
+        </Switch>
       </div>
-      <div className="number">
-        <input
-          type="number"
-          min={1}
-          max={9999}
-          value={isNaN(number) ? "" : number}
-          onChange={(v) => setNumber(parseInt(v.target.value))}
-        />
-      </div>
-      <Time />
-    </div>
+    </Router>
   );
 }
 
