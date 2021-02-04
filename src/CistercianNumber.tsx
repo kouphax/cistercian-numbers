@@ -40,165 +40,51 @@ function w(svg: any) {
 const matrix = [
   [
     (svg: any) => {},
-    (svg: any) =>
-      pos(
-        line(svg),
-        "50%",
-        w(svg) - STROKE_OFFSET,
-        STROKE_OFFSET,
-        STROKE_OFFSET
-      ),
+    (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, STROKE_OFFSET, STROKE_OFFSET),
     (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, "33%", "33%"),
-    (svg: any) =>
-      pos(line(svg), "50%", w(svg) - STROKE_OFFSET, STROKE_OFFSET, "33%"),
-    (svg: any) =>
-      pos(line(svg), "50%", w(svg) - STROKE_OFFSET, "33%", STROKE_OFFSET),
-    (svg: any) => {
-      matrix[0][1](svg);
-      matrix[0][4](svg);
-    },
-    (svg: any) =>
-      pos(
-        line(svg),
-        w(svg) - STROKE_OFFSET,
-        w(svg) - STROKE_OFFSET,
-        STROKE_OFFSET,
-        "33%"
-      ),
-    (svg: any) => {
-      matrix[0][1](svg);
-      matrix[0][6](svg);
-    },
-    (svg: any) => {
-      matrix[0][2](svg);
-      matrix[0][6](svg);
-    },
-    (svg: any) => {
-      matrix[0][1](svg);
-      matrix[0][2](svg);
-      matrix[0][6](svg);
-    },
+    (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, STROKE_OFFSET, "33%"),
+    (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, "33%", STROKE_OFFSET),
+    (svg: any) => {matrix[0][1](svg); matrix[0][4](svg); },
+    (svg: any) => pos(line(svg), w(svg) - STROKE_OFFSET, w(svg) - STROKE_OFFSET, STROKE_OFFSET, "33%"),
+    (svg: any) => {matrix[0][1](svg);matrix[0][6](svg);},
+    (svg: any) => {matrix[0][2](svg);matrix[0][6](svg);},
+    (svg: any) => {matrix[0][1](svg);matrix[0][2](svg);matrix[0][6](svg);},
   ],
   [
     (svg: any) => {},
-    (svg: any) =>
-      pos(line(svg), STROKE_OFFSET, "50%", STROKE_OFFSET, STROKE_OFFSET),
+    (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", STROKE_OFFSET, STROKE_OFFSET),
     (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", "33%", "33%"),
     (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", "33%", STROKE_OFFSET),
     (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", STROKE_OFFSET, "33%"),
-    (svg: any) => {
-      matrix[1][1](svg);
-      matrix[1][4](svg);
-    },
-    (svg: any) =>
-      pos(line(svg), STROKE_OFFSET, STROKE_OFFSET, STROKE_OFFSET, "33%"),
-    (svg: any) => {
-      matrix[1][1](svg);
-      matrix[1][6](svg);
-    },
-    (svg: any) => {
-      matrix[1][2](svg);
-      matrix[1][6](svg);
-    },
-    (svg: any) => {
-      matrix[1][1](svg);
-      matrix[1][2](svg);
-      matrix[1][6](svg);
-    },
+    (svg: any) => {matrix[1][1](svg);matrix[1][4](svg);},
+    (svg: any) => pos(line(svg), STROKE_OFFSET, STROKE_OFFSET, STROKE_OFFSET, "33%"),
+    (svg: any) => {matrix[1][1](svg);matrix[1][6](svg);},
+    (svg: any) => {matrix[1][2](svg);matrix[1][6](svg);},
+    (svg: any) => {matrix[1][1](svg);matrix[1][2](svg);matrix[1][6](svg);},
   ],
   [
     (svg: any) => {},
-    (svg: any) =>
-      pos(
-        line(svg),
-        "50%",
-        w(svg) - STROKE_OFFSET,
-        h(svg) - STROKE_OFFSET,
-        h(svg) - STROKE_OFFSET
-      ),
+    (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, h(svg) - STROKE_OFFSET, h(svg) - STROKE_OFFSET),
     (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, "66%", "66%"),
-    (svg: any) =>
-      pos(
-        line(svg),
-        "50%",
-        w(svg) - STROKE_OFFSET,
-        h(svg) - STROKE_OFFSET,
-        "66%"
-      ),
-    (svg: any) =>
-      pos(
-        line(svg),
-        "50%",
-        w(svg) - STROKE_OFFSET,
-        "66%",
-        h(svg) - STROKE_OFFSET
-      ),
-    (svg: any) => {
-      matrix[2][1](svg);
-      matrix[2][4](svg);
-    },
-    (svg: any) =>
-      pos(
-        line(svg),
-        w(svg) - STROKE_OFFSET,
-        w(svg) - STROKE_OFFSET,
-        "66%",
-        h(svg) - STROKE_OFFSET
-      ),
-    (svg: any) => {
-      matrix[2][1](svg);
-      matrix[2][6](svg);
-    },
-    (svg: any) => {
-      matrix[2][2](svg);
-      matrix[2][6](svg);
-    },
-    (svg: any) => {
-      matrix[2][1](svg);
-      matrix[2][2](svg);
-      matrix[2][6](svg);
-    },
+    (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, h(svg) - STROKE_OFFSET, "66%"),
+    (svg: any) => pos(line(svg), "50%", w(svg) - STROKE_OFFSET, "66%", h(svg) - STROKE_OFFSET),
+    (svg: any) => {matrix[2][1](svg);matrix[2][4](svg);},
+    (svg: any) => pos(line(svg), w(svg) - STROKE_OFFSET, w(svg) - STROKE_OFFSET, "66%", h(svg) - STROKE_OFFSET),
+    (svg: any) => {matrix[2][1](svg);matrix[2][6](svg);},
+    (svg: any) => {matrix[2][2](svg);matrix[2][6](svg);},
+    (svg: any) => {matrix[2][1](svg);matrix[2][2](svg);matrix[2][6](svg);},
   ],
   [
     (svg: any) => {},
-    (svg: any) =>
-      pos(
-        line(svg),
-        STROKE_OFFSET,
-        "50%",
-        h(svg) - STROKE_OFFSET,
-        h(svg) - STROKE_OFFSET
-      ),
+    (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", h(svg) - STROKE_OFFSET, h(svg) - STROKE_OFFSET),
     (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", "66%", "66%"),
-    (svg: any) =>
-      pos(line(svg), STROKE_OFFSET, "50%", "66%", h(svg) - STROKE_OFFSET),
-    (svg: any) =>
-      pos(line(svg), STROKE_OFFSET, "50%", h(svg) - STROKE_OFFSET, "66%"),
-    (svg: any) => {
-      matrix[3][1](svg);
-      matrix[3][4](svg);
-    },
-    (svg: any) =>
-      pos(
-        line(svg),
-        STROKE_OFFSET,
-        STROKE_OFFSET,
-        h(svg) - STROKE_OFFSET,
-        "66%"
-      ),
-    (svg: any) => {
-      matrix[3][1](svg);
-      matrix[3][6](svg);
-    },
-    (svg: any) => {
-      matrix[3][2](svg);
-      matrix[3][6](svg);
-    },
-    (svg: any) => {
-      matrix[3][1](svg);
-      matrix[3][2](svg);
-      matrix[3][6](svg);
-    },
+    (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", "66%", h(svg) - STROKE_OFFSET),
+    (svg: any) => pos(line(svg), STROKE_OFFSET, "50%", h(svg) - STROKE_OFFSET, "66%"),
+    (svg: any) => {matrix[3][1](svg);matrix[3][4](svg);},
+    (svg: any) => pos(line(svg), STROKE_OFFSET, STROKE_OFFSET, h(svg) - STROKE_OFFSET, "66%"),
+    (svg: any) => {matrix[3][1](svg);matrix[3][6](svg);},
+    (svg: any) => {matrix[3][2](svg);matrix[3][6](svg);},
+    (svg: any) => {matrix[3][1](svg);matrix[3][2](svg);matrix[3][6](svg);},
   ],
 ];
 

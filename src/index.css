@@ -1,4 +1,11 @@
-
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 2em;
+}
 
 .App {
   margin: auto auto;
@@ -37,4 +44,13 @@
 .App input {
   margin: 2em 1.5em;
   width: 80%;
+}
+
+li, .what {
+  font-size: 200%;
+}
+
+input {
+  font-size: 200%;
+  padding: 1em;
 }
